@@ -4,26 +4,23 @@ import cv2
 from keras.models import load_model
 import numpy as np
 
-# parameters for loading data and images
-detection_model_path = 'C:/Users/Ousse/Desktop/Projects/Emotion Detector/utils/cascades/data/haarcascade_frontalface_default.xml'
-emotion_model_path = 'C:/Users/Ousse/Desktop/Projects/Emotion Detector/utils/Emotions.h5'
 
-# hyper-parameters for bounding boxes shape
-# loading models
+detection_model_path = 'cascades/data/haarcascade_frontalface_default.xml'
+emotion_model_path = 'Emotions.h5'
+
+
 face_detection = cv2.CascadeClassifier(detection_model_path)
 emotion_classifier = load_model(emotion_model_path, compile=False)
 EMOTIONS = ["angry" ,"happy","surprised"]
 
 
-# starting video streaming
-cv2.namedWindow('your_face')
+
+cv2.namedWindow('test')
 camera = cv2.VideoCapture(0)
 while True:
     frame = camera.read()[1]
-    #reading the frame
-    #frame = cv2.resize(frame,width=400)
-    #gray = cv2.cvtColor(frame)
-    faces = face_detection.detectMultiScale(frame,scaleFactor=1.4, minNeighbors=1,minSize=(30, 30))
+    
+    faces = face_detection.detectMultiScale(frame,scaleFactor=1.05, minNeighbors=1)
     
     canvas = np.zeros((250, 300, 3), dtype="uint8")
     frameClone = frame.copy()
@@ -31,8 +28,6 @@ while True:
         faces = sorted(faces, reverse=True,
         key=lambda x: (x[2] - x[0]) * (x[3] - x[1]))[0]
         (fX, fY, fW, fH) = faces
-                    # Extract the ROI of the face from the grayscale image, resize it to a fixed 48x48 pixels, and then prepare
-            # the ROI for classification via the CNN
         roi = frame[fY:fY + fH, fX:fX + fW]
         roi = cv2.resize(roi, (48, 48))
         roi = roi.astype("float") / 255.0
@@ -46,7 +41,6 @@ while True:
 
  
     for (i, (emotion, prob)) in enumerate(zip(EMOTIONS, preds)):
-                # construct the label text
                 text = "{}: {:.2f}%".format(emotion, prob * 100)
                 w = int(prob * 300)
                 cv2.rectangle(canvas, (7, (i * 35) + 5),
