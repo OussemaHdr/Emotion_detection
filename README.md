@@ -6,7 +6,7 @@ Predict a person's emotions.
   
 ### [**Video demo**](https://www.youtube.com/watch?v=sVH6bd0JImo&feature=youtu.be)  
   
-## [1. Converting pixels into image](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Converter.py)  
+## [1. Converting pixels into images](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Converter.py)  
   
 ## [2. Orginazing the training set](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Orginizer(Train).py)  
   
