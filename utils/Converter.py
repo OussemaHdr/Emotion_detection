@@ -5,8 +5,8 @@ import numpy as np
 import scipy.misc
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--file', required=True, help="C:/Users/SBS/Desktop/Emotion Detector/Data(Pixels)/fer2013.csv")
-parser.add_argument('-o', '--output', required=True, help="C:/Users/SBS/Desktop/Emotion Detector/Images")
+parser.add_argument('-f', '--file', required=True, help="fer2013.csv")
+parser.add_argument('-o', '--output', required=True, help="Images")
 args = parser.parse_args()
 
 w, h = 48, 48
