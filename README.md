@@ -8,9 +8,9 @@ Predict a person's emotions.
   
 ## [1. Converting pixels into images](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Converter.py)  
   
-## [2. Orginazing the training set](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Orginizer(Train).py)  
+## [2. Organizing the training set](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Orginizer(Train).py)  
   
-## [3. Orginazing the testing set](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Orginizer(Train).py)  
+## [3. Organizing the testing set](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Orginizer(Train).py)  
   
 ## [4. Creating a CNN architecture and training](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/model.py)  
   
