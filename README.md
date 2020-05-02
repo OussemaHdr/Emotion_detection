@@ -14,4 +14,4 @@ Predict a person's emotions.
   
 ## [4. Creating a CNN architecture and training](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/model.py)  
   
-## [5. Integrating the model for real time detection using OpenCV's Haarcascade](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Emotion_detection.py)
+## [5. Integrating the model for real time detection using OpenCV's Haarcascade](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Emotions_detection.py)
