@@ -3,11 +3,12 @@ import os
 from tqdm import tqdm
 from PIL import Image
 
-pictures_folder = 'C:/Users/Ousse/Desktop/Emotion Detector/Images/Training'
-target = 'C:/Users/Ousse/Desktop/Emotion Detector/Images/Train1/'
+pictures_folder = 'Training'
+target = 'Train/'
 
-#for i in range (0,7):
-        #os.mkdir('C:/Users/Ousse/Desktop/Emotion Detector/Images/Train1/' + str(i))
+#Make folders for each category
+for i in range (0,7):
+        os.mkdir('Train/' + str(i))
 
 for item in os.listdir(pictures_folder):
 	base=os.path.basename(item)
