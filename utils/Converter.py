@@ -1,42 +1,26 @@
 import os
-import csv
-import argparse
-import numpy as np 
+import pandas as pd
+import numpy as np
 import scipy.misc
+from tqdm import tqdm
 
-parser = argparse.ArgumentParser()
-parser.add_argument('-f', '--file', required=True, help="fer2013.csv")
-parser.add_argument('-o', '--output', required=True, help="Images")
-args = parser.parse_args()
-
-w, h = 48, 48
+w = 48
+h = 48
 image = np.zeros((h, w), dtype=np.uint8)
-id = 1
+n = 0
 
-with open(args.file) as csvfile:
-    datareader = csv.reader(csvfile, delimiter =',')
-    next(datareader,None)
-	
-    for row in datareader:
-        
-        emotion = row[0]
-        pixels = row[1].split()
-        usage = row[2]
-        pixels_array = np.asarray(pixels, dtype=np.int)
+csvfile = "fer2013.csv"
+image_folder  = "Images"
 
-        image = pixels_array.reshape(w, h)
-        #print image.shape
+data = pd.read_csv(csvfile, delimiter =',')
 
-        stacked_image = np.dstack((image,) * 3)
-        #print stacked_image.shape
-
-        image_folder = os.path.join(args.output, usage)
-        if not os.path.exists(image_folder):
-            os.makedirs(image_folder)
-        image_file =  os.path.join(image_folder , str(id)+'_'+emotion+'.jpg')
-        scipy.misc.imsave(image_file, stacked_image)
-        id += 1 
-        if id % 100 == 0:
-            print('Processed {} images'.format(id))
-
-print("Finished processing {} images".format(id))
+for item in tqdm(range(0, data.shape[0])):
+    emotion = data['emotion'][item]
+    pixels = data['pixels'][item].split()
+    pixels_array = np.asarray(pixels, dtype=np.int)
+    image = pixels_array.reshape(w, h)
+    stacked_image = np.dstack((image,) * 3)
+    target =  image_folder + "/" + str(n)+'_'+str(emotion)+'.jpg'
+    scipy.misc.imsave(target, stacked_image)
+    n += 1
+    print('Processed {} images'.format(n))
