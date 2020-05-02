@@ -60,12 +60,12 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory("C:/Users/Ousse/Desktop/Emotion Detector/Images/Train",
+training_set = train_datagen.flow_from_directory("Train",
                                                  target_size = (48, 48),
                                                  batch_size = 32,
                                                  class_mode = 'categorical')
 
-test_set = test_datagen.flow_from_directory("C:/Users/Ousse/Desktop/Emotion Detector/Images/Test",                  
+test_set = test_datagen.flow_from_directory("Test",                  
                                             target_size = (48, 48),
                                             batch_size = 32,
                                             class_mode = 'categorical')
