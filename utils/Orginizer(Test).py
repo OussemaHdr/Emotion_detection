@@ -8,7 +8,7 @@ target = 'Test'
 
 #Make folders for each category
 for i in range (0,7):
-        os.mkdir('C:/Users/Ousse/Desktop/Emotion Detector/Images/Test/' + str(i))
+        os.mkdir('Test/' + str(i))
 
 for item in os.listdir(pictures_folder):
 	base=os.path.basename(item)
