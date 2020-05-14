@@ -47,7 +47,7 @@ classifier.add(Dropout( rate = 0.2 ))
 classifier.add(Dense(units = 16, activation = 'relu'))  
 classifier.add(Dropout( rate = 0.2 )) 
 
-classifier.add(Dense(units = 3 , activation = 'softmax')) 
+classifier.add(Dense(units = 6 , activation = 'softmax')) 
 classifier.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 
