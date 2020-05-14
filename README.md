@@ -4,7 +4,7 @@
 Predict a person's emotions.  
 [**Dataset used in this project.**](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data?fbclid=IwAR3kIKU9g0paq8AEqmPfJEk-sdAM_KluF2dhl06Clnr7uoUvG9unXo3s05s)  
   
-### [**Video demo**](https://www.youtube.com/watch?v=sVH6bd0JImo&feature=youtu.be)  
+### [**Video demo**](https://www.youtube.com/watch?v=sVH6bd0JImo&feature=youtu.be) (this video was recorded with an earlier version trained on only 3 classes)   
   
 ## [1. Converting pixels into images](https://github.com/OussemaHdr/Emotion_detection/blob/master/utils/Converter.py)  
   
